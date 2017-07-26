@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WSCargaAcademicaService WSDL service -->
+
+  <service name="WSCargaAcademica" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.edu.uniajc"/>
+      <parameter name="wsdlServiceElement" value="WSCargaAcademicaService"/>
+      <parameter name="schemaQualified" value="http://model.edu.uniajc,http://ws.edu.uniajc"/>
+      <parameter name="wsdlServicePort" value="WSCargaAcademica"/>
+      <parameter name="className" value="uniajc.edu.ws.WSCargaAcademica"/>
+      <parameter name="wsdlPortType" value="WSCargaAcademica"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ws.edu.uniajc" xmlns:retNS="http://ws.edu.uniajc" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCargaAcademicafullJson" qname="operNS:getCargaAcademicafullJson" returnQName="retNS:getCargaAcademicafullJsonReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:P_ID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.edu.uniajc" xmlns:retNS="http://ws.edu.uniajc" xmlns:rtns="http://model.edu.uniajc" name="getCargaAcademicafull" qname="operNS:getCargaAcademicafull" returnQName="retNS:getCargaAcademicafullReturn" returnType="rtns:CargaAcademica" soapAction="">
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:P_ID" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="getCargaAcademicafullJson getCargaAcademicafull"/>
+
+      <typeMapping xmlns:ns="http://model.edu.uniajc" qname="ns:CargaAcademica" type="java:uniajc.edu.model.CargaAcademica" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

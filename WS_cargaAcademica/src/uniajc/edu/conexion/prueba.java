@@ -1,7 +1,6 @@
 package uniajc.edu.conexion;
 
-import uniajc.edu.model.CargaAcademica;
-import uniajc.edu.servicio.SCargaAcademicaImp;
+
 
 public class prueba {
 

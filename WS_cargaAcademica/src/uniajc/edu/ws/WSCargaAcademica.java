@@ -1,14 +1,10 @@
 package uniajc.edu.ws;
 
-import java.util.ArrayList;
-
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 
-import com.google.gson.Gson;
-
-import uniajc.edu.dao.CargaAcademicaDao;
 import uniajc.edu.model.CargaAcademica;
+//import uniajc.edu.dao.CargaAcademicaDao;
+//import uniajc.edu.model.CargaAcademica;
 import uniajc.edu.servicio.SCargaAcademicaImp;
 
 public class WSCargaAcademica {

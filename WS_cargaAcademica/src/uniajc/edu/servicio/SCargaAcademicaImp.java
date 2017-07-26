@@ -1,19 +1,16 @@
 package uniajc.edu.servicio;
 
-import java.util.ArrayList;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
-import uniajc.edu.dao.*;
-import uniajc.edu.model.*;
+import uniajc.edu.dao.CargaAcademicaDao;
+import uniajc.edu.model.CargaAcademica;
+import uniajc.edu.servicio.ICargaAcademica;
 
 
 public class SCargaAcademicaImp implements ICargaAcademica {
-
+   String RESPUESTA="Exito";
+   String MENSAJE="mensaje";
 /*	@Override
 	 public CargaAcademica getCargaAcademica (int id) {
 	  CargaAcademicaDao CargaAcademicaDAO = new CargaAcademicaDao();
@@ -60,23 +57,33 @@ public class SCargaAcademicaImp implements ICargaAcademica {
 	
 	
 	
-/*	@Override
-	public String getCargaAcademicafullJson(int id) {
+/*	public  String construirJSONError(String error) {
+        try {
 
-				try {
-			JSONObject json = new JSONObject();
-			json.put("nombre", "Jorge");
-			json.put("ap1", "Garci");
-			json.put("nombre2", "ge");
-			
-			return json.toString();
+            JSONObject json = new JSONObject();
+            json.put(RESPUESTA, false);
+            json.put(MENSAJE, "Se presento el siguiente error: " + error);
+            return json.toString();
 
-		} catch (JSONException e) {
-			
-			return "Error JSON";
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+            return "Error presentado al crear el Obj JSON. " + ex.getMessage();
+        }
+    }
 
-		}
-		
-	}*/
+    public  String construirJSONExitoso(String respuesta) {
+        try {
+
+            JSONObject json = new JSONObject();
+            json.put(RESPUESTA, true);
+            json.put(MENSAJE, respuesta);
+            return json.toString();
+
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+            return "Error presentado al crear el Obj JSON. " + ex.getMessage();
+        }
+    }*/
+	
 	
 }

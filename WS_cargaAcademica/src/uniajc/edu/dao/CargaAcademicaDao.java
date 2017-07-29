@@ -10,57 +10,7 @@ import com.google.gson.Gson;
 
 public class CargaAcademicaDao {
 	
-
-/*	public CargaAcademica getCargaAcademica(int id) {
-		
-		
-		CargaAcademica carga = new CargaAcademica();
-		ConnectionDB conn = new ConnectionDB();
-		 
-		 try {
-			 conn.connect();
-			ResultSet rs = conn.query("SELECT * FROM ACADEMICO.PERSONAGENERAL WHERE PEGE_ID = "+id);
-			if(rs.next()){
-			    carga.setPEGE_ID(rs.getString("PEGE_ID"));
-			    carga.setPEGE_DOCUMENTOIDENTIDAD(rs.getString("PEGE_DOCUMENTOIDENTIDAD"));
-			   }
-			   return carga;
-		 } catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			  conn.disconnect();
-		}
-		
-		return null;
-	}*/
-	
-/*	public String getCargaAcademicaJSON(int id) {
-		 String data="nada";
-		final Gson gson = new Gson();
-		CargaAcademica carga = new CargaAcademica();
-		ConnectionDB conn = new ConnectionDB();
-		 
-		 try {
-			 conn.connect();
-			ResultSet rs = conn.query("SELECT * FROM ACADEMICO.nota WHERE nota_ID = "+id);
-			if(rs.next()){
-				data= rs.getString("NOTA_DESCRIPCION");
-			 //   carga.setPEGE_ID(rs.getString("NOTA_ID"));
-			 //   carga.setPEGE_DOCUMENTOIDENTIDAD(rs.getString("NOTA_DESCRIPCION"));
-			   }
-			//data= gson.toJson(carga.getPEGE_ID());
-			System.out.println("Dato obtenido "+ data);
-			return data;
-		 } catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			  conn.disconnect();
-			  return "Error";
-		}
-		
-	}*/
-	
-	public CargaAcademica getCargaAcademicafull(int P_ID) {
+	public CargaAcademica getCargaAcademicafull(int P_ID,int ANO,int PERIODO) {
 		
 		
 		CargaAcademica cargafull = new CargaAcademica();
@@ -84,17 +34,27 @@ public class CargaAcademicaDao {
 						   +"AND ACADEMICO.GRUPO.MATE_CODIGOMATERIA=ACADEMICO.MATERIA.MATE_CODIGOMATERIA "
 						   +"AND ACADEMICO.UNIDAD.UNID_ID=ACADEMICO.MATERIA.UNID_ID "
 						   +"AND ACADEMICO.PERIODOUNIVERSIDAD.PEUN_ID=ACADEMICO.GRUPO.PEUN_ID "
-						   +"AND GRUPO.PEUN_ID IN (472) "
+						   +"AND PEUN_ANO IN ("+ANO+   ") "
+						   +"AND PEUN_PERIODO IN ("+PERIODO+") "
 						   +"AND GRUP_ACTIVO=1 "							   
-                           +"AND PERSONAGENERAL.PEGE_ID= "+P_ID+" ");
+                           +"AND PEGE_DOCUMENTOIDENTIDAD= "+P_ID+" ");
                             //+"ORDER BY 3");
-		       System.out.println(v_sqlPrograms); 
+		        
 			ResultSet rs = conn.query(v_sqlPrograms);	
 		   
 			if (rs.next()){
 				cargafull.setPEGE_ID(rs.getString("PEGE_ID"));
-				cargafull.setPEGE_DOCUMENTOIDENTIDAD(rs.getString("PEGE_DOCUMENTOIDENTIDAD"));
-				cargafull.setUNID_NOMBRE(rs.getString("UNID_NOMBRE"));
+				cargafull.setPEGE_DOCUMENTOIDENTIDAD(rs.getString("DOCUMENTO"));
+				cargafull.setUNID_NOMBRE(rs.getString("NOMBRES"));
+				cargafull.setUNID_NOMBRE(rs.getString("UNIDAD_ACADEMICA"));	
+				cargafull.setUNID_NOMBRE(rs.getString("CODIGO_MATERIA"));
+				cargafull.setUNID_NOMBRE(rs.getString("MATERIA"));
+				cargafull.setUNID_NOMBRE(rs.getString("GRUPO"));
+				cargafull.setUNID_NOMBRE(rs.getString("MATRICULADOS"));
+				cargafull.setUNID_NOMBRE(rs.getString("INGRESO_DOCENTE_GRUPO"));
+				cargafull.setUNID_NOMBRE(rs.getString("REGISTRADO_POR"));
+				cargafull.setUNID_NOMBRE(rs.getString("PERIODO"));
+			
 				
 			}
 			

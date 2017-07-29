@@ -27,11 +27,11 @@ public class ConnectionDB {
 	}
 
 	public ConnectionDB() {
-		this.hostname = "localhost";
+		this.hostname = "10.75.19.4";
 		this.port = "1521";
 		this.username = "ACADEMICO";
-		this.password = "ACADEMICO";
-		this.sid = "/xe";
+		this.password = "acad23+yxw#";
+		this.sid = "/UNIAJC";
 	}
 
 	public String getHostname() {

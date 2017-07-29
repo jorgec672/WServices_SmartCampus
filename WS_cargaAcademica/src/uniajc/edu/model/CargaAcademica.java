@@ -4,6 +4,38 @@ public class CargaAcademica {
 
 	private String PEGE_ID;
 	private String PEGE_DOCUMENTOIDENTIDAD;
+	public String getNOMBRES() {
+		return NOMBRES;
+	}
+
+
+
+
+
+
+	public void setNOMBRES(String nOMBRES) {
+		NOMBRES = nOMBRES;
+	}
+
+
+
+
+
+
+	public String getPERIODO() {
+		return PERIODO;
+	}
+
+
+
+
+
+
+	public void setPERIODO(String pERIODO) {
+		PERIODO = pERIODO;
+	}
+
+
 	private String NOMBRES;
 	private String MATE_CODIGOMATERIA;
 	private String MATE_NOMBRE;
@@ -19,11 +51,27 @@ public class CargaAcademica {
 	}
 		
 
-	public CargaAcademica(String pEGE_ID, String pEGE_DOCUMENTOIDENTIDAD, String uNID_NOMBRE) {
+	
+
+
+
+	public CargaAcademica(String pEGE_ID, String pEGE_DOCUMENTOIDENTIDAD, String nOMBRES, String mATE_CODIGOMATERIA,
+			String mATE_NOMBRE, String gRUP_NOMBRE, String gRUP_CUPOS, String dOGR_FECHACAMBIO,
+			String dOGR_REGISTRADOPOR, String pERIODO) {
+		
 		PEGE_ID = pEGE_ID;
 		PEGE_DOCUMENTOIDENTIDAD = pEGE_DOCUMENTOIDENTIDAD;
-		NOMBRES = uNID_NOMBRE;
+		NOMBRES = nOMBRES;
+		MATE_CODIGOMATERIA = mATE_CODIGOMATERIA;
+		MATE_NOMBRE = mATE_NOMBRE;
+		GRUP_NOMBRE = gRUP_NOMBRE;
+		GRUP_CUPOS = gRUP_CUPOS;
+		DOGR_FECHACAMBIO = dOGR_FECHACAMBIO;
+		DOGR_REGISTRADOPOR = dOGR_REGISTRADOPOR;
+		PERIODO = pERIODO;
 	}
+
+
 
 
 

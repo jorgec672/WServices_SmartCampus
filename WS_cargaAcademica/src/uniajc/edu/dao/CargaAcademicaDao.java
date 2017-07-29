@@ -45,15 +45,15 @@ public class CargaAcademicaDao {
 			if (rs.next()){
 				cargafull.setPEGE_ID(rs.getString("PEGE_ID"));
 				cargafull.setPEGE_DOCUMENTOIDENTIDAD(rs.getString("DOCUMENTO"));
-				cargafull.setUNID_NOMBRE(rs.getString("NOMBRES"));
+				cargafull.setNOMBRES(rs.getString("NOMBRES"));
 				cargafull.setUNID_NOMBRE(rs.getString("UNIDAD_ACADEMICA"));	
-				cargafull.setUNID_NOMBRE(rs.getString("CODIGO_MATERIA"));
-				cargafull.setUNID_NOMBRE(rs.getString("MATERIA"));
-				cargafull.setUNID_NOMBRE(rs.getString("GRUPO"));
-				cargafull.setUNID_NOMBRE(rs.getString("MATRICULADOS"));
-				cargafull.setUNID_NOMBRE(rs.getString("INGRESO_DOCENTE_GRUPO"));
-				cargafull.setUNID_NOMBRE(rs.getString("REGISTRADO_POR"));
-				cargafull.setUNID_NOMBRE(rs.getString("PERIODO"));
+				cargafull.setMATE_CODIGOMATERIA(rs.getString("CODIGO_MATERIA"));
+				cargafull.setMATE_NOMBRE(rs.getString("MATERIA"));
+				cargafull.setGRUP_NOMBRE(rs.getString("GRUPO"));
+				cargafull.setGRUP_CUPOS(rs.getString("MATRICULADOS"));
+				cargafull.setDOGR_FECHACAMBIO(rs.getString("INGRESO_DOCENTE_GRUPO"));
+				cargafull.setDOGR_REGISTRADOPOR(rs.getString("REGISTRADO_POR"));
+				cargafull.setPERIODO(rs.getString("PERIODO"));
 			
 				
 			}

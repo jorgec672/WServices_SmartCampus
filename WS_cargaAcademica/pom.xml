@@ -51,6 +51,23 @@
    			 <artifactId>commons-io</artifactId>
   			  <version>2.5</version>
 		</dependency>
+		
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc</artifactId>
+    <version>14</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/lib/ojdbc6.jar</systemPath> <!-- must match file name -->
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+<dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.4</version>
+</dependency>
+       
+  
 
 		<!-- ..DEPENDENCIAS PARA TEST .... -->
 		<dependency>

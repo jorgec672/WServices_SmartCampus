@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.edu.uniajc" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.edu.uniajc" xmlns:intf="http://ws.edu.uniajc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getGrupoAcademicoJSON">
+    <complexType>
+     <sequence>
+      <element name="GRUPO" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGrupoAcademicoJSONResponse">
+    <complexType>
+     <sequence>
+      <element name="getGrupoAcademicoJSONReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getGrupoAcademicoJSONResponse">
+
+      <wsdl:part element="impl:getGrupoAcademicoJSONResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGrupoAcademicoJSONRequest">
+
+      <wsdl:part element="impl:getGrupoAcademicoJSON" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSGrupoAcademico">
+
+      <wsdl:operation name="getGrupoAcademicoJSON">
+
+         <wsdl:input message="impl:getGrupoAcademicoJSONRequest" name="getGrupoAcademicoJSONRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGrupoAcademicoJSONResponse" name="getGrupoAcademicoJSONResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSGrupoAcademicoSoapBinding" type="impl:WSGrupoAcademico">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getGrupoAcademicoJSON">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGrupoAcademicoJSONRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGrupoAcademicoJSONResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSGrupoAcademicoService">
+
+      <wsdl:port binding="impl:WSGrupoAcademicoSoapBinding" name="WSGrupoAcademico">
+
+         <wsdlsoap:address location="http://localhost:8180/Wservice_GrupoAcademico/services/WSGrupoAcademico"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

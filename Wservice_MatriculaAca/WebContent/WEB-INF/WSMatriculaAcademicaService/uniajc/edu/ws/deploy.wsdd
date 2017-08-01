@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WSMatriculaAcademicaService WSDL service -->
+
+  <service name="WSMatriculaAcademica" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.edu.uniajc"/>
+      <parameter name="wsdlServiceElement" value="WSMatriculaAcademicaService"/>
+      <parameter name="schemaQualified" value="http://model.edu.uniajc,http://ws.edu.uniajc"/>
+      <parameter name="wsdlServicePort" value="WSMatriculaAcademica"/>
+      <parameter name="className" value="uniajc.edu.ws.WSMatriculaAcademica"/>
+      <parameter name="wsdlPortType" value="WSMatriculaAcademica"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ws.edu.uniajc" xmlns:retNS="http://ws.edu.uniajc" xmlns:rtns="http://model.edu.uniajc" name="getMatriculaAcademicafull" qname="operNS:getMatriculaAcademicafull" returnQName="retNS:getMatriculaAcademicafullReturn" returnType="rtns:MatriculaAcademica" soapAction="">
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IDENTIFICACION" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.edu.uniajc" xmlns:retNS="http://ws.edu.uniajc" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMatriculaAcademicaJSON" qname="operNS:getMatriculaAcademicaJSON" returnQName="retNS:getMatriculaAcademicaJSONReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IDENTIFICACION" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="getMatriculaAcademicaJSON getMatriculaAcademicafull"/>
+
+      <typeMapping xmlns:ns="http://model.edu.uniajc" qname="ns:MatriculaAcademica" type="java:uniajc.edu.model.MatriculaAcademica" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

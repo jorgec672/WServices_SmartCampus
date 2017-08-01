@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.edu.uniajc" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.edu.uniajc" xmlns:intf="http://ws.edu.uniajc" xmlns:tns1="http://model.edu.uniajc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.edu.uniajc"/>
+   <element name="getMatriculaAcademicafull">
+    <complexType>
+     <sequence>
+      <element name="IDENTIFICACION" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMatriculaAcademicafullResponse">
+    <complexType>
+     <sequence>
+      <element name="getMatriculaAcademicafullReturn" type="tns1:MatriculaAcademica"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMatriculaAcademicaJSON">
+    <complexType>
+     <sequence>
+      <element name="IDENTIFICACION" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMatriculaAcademicaJSONResponse">
+    <complexType>
+     <sequence>
+      <element name="getMatriculaAcademicaJSONReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="MatriculaAcademica">
+    <sequence>
+     <element name="COD_MATERIA" nillable="true" type="xsd:string"/>
+     <element name="COD_PROG" nillable="true" type="xsd:string"/>
+     <element name="CRED" nillable="true" type="xsd:string"/>
+     <element name="DOCENTE" nillable="true" type="xsd:string"/>
+     <element name="DOCUMENTO" nillable="true" type="xsd:string"/>
+     <element name="ESTADO_MAAC" nillable="true" type="xsd:string"/>
+     <element name="GRUPO" nillable="true" type="xsd:string"/>
+     <element name="MATERIA" nillable="true" type="xsd:string"/>
+     <element name="NOMBRE" nillable="true" type="xsd:string"/>
+     <element name="PER_MATRIC" nillable="true" type="xsd:string"/>
+     <element name="PROGRAMA" nillable="true" type="xsd:string"/>
+     <element name="SEMESTRE" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getMatriculaAcademicafullResponse">
+
+      <wsdl:part element="impl:getMatriculaAcademicafullResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMatriculaAcademicaJSONRequest">
+
+      <wsdl:part element="impl:getMatriculaAcademicaJSON" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMatriculaAcademicafullRequest">
+
+      <wsdl:part element="impl:getMatriculaAcademicafull" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMatriculaAcademicaJSONResponse">
+
+      <wsdl:part element="impl:getMatriculaAcademicaJSONResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSMatriculaAcademica">
+
+      <wsdl:operation name="getMatriculaAcademicafull">
+
+         <wsdl:input message="impl:getMatriculaAcademicafullRequest" name="getMatriculaAcademicafullRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMatriculaAcademicafullResponse" name="getMatriculaAcademicafullResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMatriculaAcademicaJSON">
+
+         <wsdl:input message="impl:getMatriculaAcademicaJSONRequest" name="getMatriculaAcademicaJSONRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMatriculaAcademicaJSONResponse" name="getMatriculaAcademicaJSONResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSMatriculaAcademicaSoapBinding" type="impl:WSMatriculaAcademica">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getMatriculaAcademicafull">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMatriculaAcademicafullRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMatriculaAcademicafullResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMatriculaAcademicaJSON">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMatriculaAcademicaJSONRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMatriculaAcademicaJSONResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSMatriculaAcademicaService">
+
+      <wsdl:port binding="impl:WSMatriculaAcademicaSoapBinding" name="WSMatriculaAcademica">
+
+         <wsdlsoap:address location="http://localhost:8180/Wservice_MatriculaAca/services/WSMatriculaAcademica"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -3,137 +3,50 @@ package uniajc.edu.model;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.Before;
 
 public class CargaAcademicaTest {
 
-	@Test
-	public void testGetNOMBRES() {
-		fail("Not yet implemented");
+	CargaAcademica C_acade;
+	
+	@Before
+	public void Before(){
+		C_acade = new CargaAcademica();
 	}
-
 	@Test
-	public void testSetNOMBRES() {
-		fail("Not yet implemented");
+	public void testNOMBRES() {
+		C_acade.setNOMBRES("Jorge");
+		assertEquals("Jorge", C_acade.getNOMBRES());		
 	}
-
 	@Test
-	public void testGetPERIODO() {
-		fail("Not yet implemented");
+	public void testPERIODO() {
+		C_acade.setPERIODO("2017");
+		assertEquals("2017", C_acade.getPERIODO());		
 	}
-
 	@Test
-	public void testSetPERIODO() {
-		fail("Not yet implemented");
+	public void testPEGE_ID() {
+		C_acade.setPEGE_ID("1130");
+		assertEquals("1130", C_acade.getPEGE_ID());		
 	}
-
 	@Test
-	public void testCargaAcademica() {
-		fail("Not yet implemented");
+	public void testPEGE_DOCUMENTOIDENTIDAD() {
+		C_acade.setPEGE_DOCUMENTOIDENTIDAD("1130630549");
+		assertEquals("1130630549", C_acade.getPEGE_DOCUMENTOIDENTIDAD());		
 	}
-
 	@Test
-	public void testCargaAcademicaStringStringStringStringStringStringStringStringStringString() {
-		fail("Not yet implemented");
+	public void testUNID_NOMBRE() {
+		C_acade.setUNID_NOMBRE("1130630549");
+		assertEquals("1130630549", C_acade.getUNID_NOMBRE());		
 	}
-
 	@Test
-	public void testGetPEGE_ID() {
-		fail("Not yet implemented");
+	public void testMATE_CODIGOMATERIA() {
+		C_acade.setMATE_CODIGOMATERIA("215D");
+		assertEquals("215D", C_acade.getMATE_CODIGOMATERIA());		
 	}
-
 	@Test
-	public void testSetPEGE_ID() {
-		fail("Not yet implemented");
+	public void testGRUP_NOMBRE() {
+		C_acade.setGRUP_NOMBRE("Matematicas");
+		assertEquals("Matematicas", C_acade.getGRUP_NOMBRE());		
 	}
-
-	@Test
-	public void testGetPEGE_DOCUMENTOIDENTIDAD() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetPEGE_DOCUMENTOIDENTIDAD() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetUNID_NOMBRE() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetUNID_NOMBRE() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetMATE_CODIGOMATERIA() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMATE_CODIGOMATERIA() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetMATE_NOMBRE() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMATE_NOMBRE() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetGRUP_NOMBRE() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetGRUP_NOMBRE() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetGRUP_CUPOS() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetGRUP_CUPOS() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetDOGR_FECHACAMBIO() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetDOGR_FECHACAMBIO() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetDOGR_REGISTRADOPOR() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetDOGR_REGISTRADOPOR() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPEUN_PERIODO() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetPEUN_PERIODO() {
-		fail("Not yet implemented");
-	}
-
 }
+

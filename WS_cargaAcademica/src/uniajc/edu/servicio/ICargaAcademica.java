@@ -4,6 +4,6 @@ import uniajc.edu.model.CargaAcademica;
 
 public interface ICargaAcademica {
 
-	public CargaAcademica getCargaAcademicafull(int id,int ano,int periodo);
+	public CargaAcademica getCargaAcademicafull(String id,String ano,String periodo);
 		
 }

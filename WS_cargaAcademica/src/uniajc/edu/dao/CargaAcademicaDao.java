@@ -4,13 +4,13 @@ import uniajc.edu.model.*;
 import uniajc.edu.conexion.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 public class CargaAcademicaDao {
 	
-	public CargaAcademica getCargaAcademicafull(int P_ID,int ANO,int PERIODO) {
+	public CargaAcademica getCargaAcademicafull(String P_ID,String ANO,String PERIODO) {
 		
 		
 		CargaAcademica cargafull = new CargaAcademica();

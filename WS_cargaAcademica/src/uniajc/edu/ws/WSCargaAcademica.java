@@ -21,14 +21,14 @@ public class WSCargaAcademica {
     * @return  <b>String (Notación JSON)</b>
    ***/
    @WebMethod(operationName = "getCargaAcademica")
-   public CargaAcademica getCargaAcademicafull(int IDENTIFICACION, int AÑO, int PERIODO) {
+   public CargaAcademica getCargaAcademicafull(String IDENTIFICACION, String AÑO, String PERIODO) {
  
 	   SCargaAcademicaImp dao = new SCargaAcademicaImp();
 	   return dao.getCargaAcademicafull(IDENTIFICACION,AÑO,PERIODO);
 }
    
    @WebMethod(operationName = "getCargaAcademicaJSON")
-   public String getCargaAcademicaJSON(int IDENTIFICACION, int AÑO, int PERIODO) {
+   public String getCargaAcademicaJSON(String IDENTIFICACION, String AÑO, String PERIODO) {
        return jsonUtil.respondeOBJSON(new SCargaAcademicaImp().getCargaAcademicafull(IDENTIFICACION,AÑO,PERIODO));
    }
   

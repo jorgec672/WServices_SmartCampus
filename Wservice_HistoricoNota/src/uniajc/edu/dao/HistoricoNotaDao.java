@@ -8,7 +8,7 @@ import uniajc.edu.conexion.ConnectionDB;
 import uniajc.edu.model.*;
 public class HistoricoNotaDao {
 
-	public HistoricoNota getHistoricoNota(int P_ID,int ANO,int PERIODO)
+	public HistoricoNota getHistoricoNota(String P_ID,String ANO,String PERIODO)
 	{
 		HistoricoNota carga = new HistoricoNota();
 		ConnectionDB conn = new ConnectionDB();

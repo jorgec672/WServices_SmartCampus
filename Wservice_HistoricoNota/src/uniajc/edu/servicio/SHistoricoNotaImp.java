@@ -8,7 +8,7 @@ import uniajc.edu.model.HistoricoNota;
 public class SHistoricoNotaImp implements IHistoricoNota {
 
 	@Override
-	 public HistoricoNota getHistoricoNota (int id,int ano,int periodo) {
+	 public HistoricoNota getHistoricoNota (String id,String ano,String periodo) {
 	  HistoricoNotaDao HistoricoNotaDao = new HistoricoNotaDao();
 	  return HistoricoNotaDao.getHistoricoNota(id,ano,periodo);
 	

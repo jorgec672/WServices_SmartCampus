@@ -26,14 +26,14 @@ public class WSHistoricoNota {
     * @return  <b>String (Notación JSON)</b>
    ***/
    @WebMethod(operationName = "getHistoricoNota")
-   public HistoricoNota getHistoricoNotafull(int IDENTIFICACION, int AÑO, int PERIODO) {
+   public HistoricoNota getHistoricoNotafull(String IDENTIFICACION, String AÑO, String PERIODO) {
  
 	   SHistoricoNotaImp dao = new SHistoricoNotaImp();
 	   return dao.getHistoricoNota(IDENTIFICACION,AÑO,PERIODO);
 }
    
    @WebMethod(operationName = "getHistoricoNotaJSON")
-   public String getHistoricoNotaJSON(int IDENTIFICACION, int AÑO, int PERIODO) {
+   public String getHistoricoNotaJSON(String IDENTIFICACION,String AÑO, String PERIODO) {
        return jsonUtil.respondeOBJSON(new SHistoricoNotaImp().getHistoricoNota(IDENTIFICACION,AÑO,PERIODO));
    }
   

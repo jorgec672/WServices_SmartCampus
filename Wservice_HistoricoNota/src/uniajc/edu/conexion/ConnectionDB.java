@@ -82,7 +82,7 @@ public class ConnectionDB {
 		this.sid = sid;
 	}
 
-	public void connect(){
+	public boolean connect(){
 		
 		String url = "jdbc:oracle:thin:@"+this.hostname+":"+this.port+""+this.sid+"";
 		try {
@@ -92,6 +92,7 @@ public class ConnectionDB {
 		} catch(SQLException | ClassNotFoundException ex) {ex.printStackTrace();
 			this.connection = null;
 		}
+		return this.isConnected();
 	}
 	
 	public ResultSet query(String query) throws SQLException

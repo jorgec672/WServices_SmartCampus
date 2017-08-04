@@ -1,0 +1,7 @@
+uniajc\edu\model\HistoricoNota.class
+uniajc\edu\dao\HistoricoNotaDao.class
+uniajc\edu\ws\WSHistoricoNota.class
+uniajc\edu\conexion\ConnectionDB.class
+uniajc\edu\servicio\IHistoricoNota.class
+uniajc\edu\servicio\SHistoricoNotaImp.class
+uniajc\edu\utilidades\CreaJson.class

@@ -25,16 +25,11 @@ public class WSHistoricoNota {
     * @param ID    <i>(Identificación unica del Profesor en Academusoft) </i>
     * @return  <b>String (Notación JSON)</b>
    ***/
-   @WebMethod(operationName = "getHistoricoNota")
-   public HistoricoNota getHistoricoNotafull(String IDENTIFICACION, String AÑO, String PERIODO) {
- 
-	   SHistoricoNotaImp dao = new SHistoricoNotaImp();
-	   return dao.getHistoricoNota(IDENTIFICACION,AÑO,PERIODO);
-}
+
    
    @WebMethod(operationName = "getHistoricoNotaJSON")
-   public String getHistoricoNotaJSON(String IDENTIFICACION,String AÑO, String PERIODO) {
-       return jsonUtil.respondeOBJSON(new SHistoricoNotaImp().getHistoricoNota(IDENTIFICACION,AÑO,PERIODO));
+   public String getHistoricoNotaJSON(String IDENTIFICACION,String ANO, String PERIODO) {
+       return jsonUtil.respondeOBJSON(new SHistoricoNotaImp().getHistoricoNota(IDENTIFICACION,ANO,PERIODO));
    }
   
 

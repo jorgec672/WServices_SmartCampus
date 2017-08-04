@@ -7,7 +7,7 @@
 
 package uniajc.edu.model;
 
-public class HistoricoNota  implements java.io.Serializable {
+public class HistoricoNota implements java.io.Serializable {
     private java.lang.String ESTP_CODIGOMATRICULA;
 
     private java.lang.String GRUP_NOMBRE;
@@ -36,9 +36,9 @@ public class HistoricoNota  implements java.io.Serializable {
     
 
 
-    public HistoricoNota(String eSTP_CODIGOMATRICULA, String gRUP_NOMBRE, String mATE_CODIGOMATERIA, String mATE_NOMBRE,
-			String pEGE_ID, String pEUN_ANO, String pEUN_PERIODO, String pROG_CODIGOPROGRAMA, String rEAC_NOTAFINAL,
-			String rEAC_TIPO, String nOMBRES) {
+    public HistoricoNota(String pEGE_ID, String eSTP_CODIGOMATRICULA, String nOMBRES, String gRUP_NOMBRE, String mATE_CODIGOMATERIA, String mATE_NOMBRE,
+			 String pEUN_ANO, String pEUN_PERIODO, String pROG_CODIGOPROGRAMA, String rEAC_NOTAFINAL,
+			String rEAC_TIPO) {
 		super();
 		ESTP_CODIGOMATRICULA = eSTP_CODIGOMATRICULA;
 		GRUP_NOMBRE = gRUP_NOMBRE;

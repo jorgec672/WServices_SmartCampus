@@ -8,7 +8,7 @@ import uniajc.edu.conexion.ConnectionDB;
 import uniajc.edu.model.*;
 public class HistoricoNotaDao {
 
-	public HistoricoNota getHistoricoNota(String P_ID,String ANO,String PERIODO)
+	public ArrayList<HistoricoNota> getHistoricoNota(String P_ID,String ANO,String PERIODO)
 	{
 		HistoricoNota carga = new HistoricoNota();
 		ConnectionDB conn = new ConnectionDB();
@@ -18,13 +18,16 @@ public class HistoricoNotaDao {
 			 conn.connect();
 			
 			 String v_sqlPrograms = "SELECT PEGE.PEGE_ID,PROG.PROG_CODIGOPROGRAMA AS CODIGOPROGRAMA,"
-					+ "ESTP.ESTP_CODIGOMATRICULA AS CODIGO,"
+					+ "PEGE_DOCUMENTOIDENTIDAD AS CODIGO,"
 					+ "PENG_PRIMERAPELLIDO||' ' ||PENG_SEGUNDOAPELLIDO||' '||PENG_PRIMERNOMBRE||' '||PENG_SEGUNDONOMBRE AS NOMBRES,"
-					+ "GRUP.GRUP_NOMBRE ,PEUN_ANO,PEUN_PERIODO,"
-					+ "REG.MATE_CODIGOMATERIA, "
-					+ "MATE_NOMBRE,"
+					+ "GRUP.GRUP_NOMBRE AS GRUPO ,"
+					+ "PROG_NOMBRE AS PROGRAMA,"
+					+ "PEUN_ANO AS ANO,"
+					+ "PEUN_PERIODO AS PERIODO,"
+					+ "REG.MATE_CODIGOMATERIA AS COD_MATERIA, "
+					+ "MATE_NOMBRE AS MATERIA,"
 					+ "REAC_NOTAFINAL AS NOTA_FINAL,"
-					+ "REAC_TIPO "
+					+ "REAC_TIPO AS TIPO "
 	+ "FROM "
 + "ACADEMICO.HIS_MATRICULAACADEMICA MAAC,"
 + "ACADEMICO.GRUPO GRUP, ACADEMICO.MATERIA MATE,"
@@ -43,32 +46,20 @@ public class HistoricoNotaDao {
 + "REG.MATE_CODIGOMATERIA=MATE.MATE_CODIGOMATERIA AND "
 + "ESTP.ESTP_ID=MAAC.ESTP_ID AND  PER.PEUN_ID=REG.PEUN_ID AND "
 + "PEUN_ANO IN ("+ANO+") "
-+ "AND PEUN_PERIODO IN ("+PERIODO+") "
-+ "AND GRUP_ACTIVO=1 "							   
-+ "AND PEGE_DOCUMENTOIDENTIDAD="+P_ID+" "
++ "AND PEUN_PERIODO IN ('"+PERIODO+"') "							   
++ "AND PEGE_DOCUMENTOIDENTIDAD='"+P_ID+"' "
 + "order by peun_ano,peun_periodo";
-			 
+			
+			
 			 ResultSet rs = conn.query(v_sqlPrograms);	
-			 System.out.println(v_sqlPrograms);
+			 
 		while (rs.next()){
+		
+			Datos.add(new HistoricoNota (rs.getString("PEGE_ID"),rs.getString("CODIGO"),rs.getString("NOMBRES"),rs.getString("GRUPO"), rs.getString("ANO"),rs.getString("PERIODO"), rs.getString("COD_MATERIA"),rs.getString("PROGRAMA"),rs.getString("MATERIA"), rs.getString("NOTA_FINAL"), rs.getString("TIPO")));
 			
-			carga.setPEGE_ID(rs.getString("PEGE_ID"));  
-			carga.setESTP_CODIGOMATRICULA(rs.getString("CODIGO"));
-			carga.setNOMBRES(rs.getString("NOMBRES"));
-			 carga.setPROG_CODIGOPROGRAMA(rs.getString("CODIGOPROGRAMA"));
-			  carga.setMATE_CODIGOMATERIA(rs.getString("MATE_CODIGOMATERIA"));
-			  carga.setREAC_NOTAFINAL(rs.getString("NOTA_FINAL"));
-			   carga.setREAC_TIPO(rs.getString("REAC_TIPO"));
-			
-			    
-			
-								
-			    
-			Datos.add(carga);
 		}
 		 
-		System.out.println(Datos.toString());
-			return carga;
+			return Datos;
 			
 		
 		 } catch (SQLException e) {

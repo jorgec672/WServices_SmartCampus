@@ -5,23 +5,17 @@
   <service name="WSHistoricoNota" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://ws.edu.uniajc"/>
       <parameter name="wsdlServiceElement" value="WSHistoricoNotaService"/>
-      <parameter name="schemaQualified" value="http://model.edu.uniajc,http://ws.edu.uniajc"/>
+      <parameter name="schemaQualified" value="http://ws.edu.uniajc"/>
       <parameter name="wsdlServicePort" value="WSHistoricoNota"/>
       <parameter name="className" value="uniajc.edu.ws.WSHistoricoNota"/>
       <parameter name="wsdlPortType" value="WSHistoricoNota"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://ws.edu.uniajc" xmlns:retNS="http://ws.edu.uniajc" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getHistoricoNotaJSON" qname="operNS:getHistoricoNotaJSON" returnQName="retNS:getHistoricoNotaJSONReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IDENTIFICACION" type="tns:int"/>
-        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:AÑO" type="tns:int"/>
-        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PERIODO" type="tns:int"/>
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IDENTIFICACION" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:AÑO" type="tns:string"/>
+        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PERIODO" type="tns:string"/>
       </operation>
-      <operation xmlns:operNS="http://ws.edu.uniajc" xmlns:retNS="http://ws.edu.uniajc" xmlns:rtns="http://model.edu.uniajc" name="getHistoricoNotafull" qname="operNS:getHistoricoNotafull" returnQName="retNS:getHistoricoNotafullReturn" returnType="rtns:HistoricoNota" soapAction="">
-        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IDENTIFICACION" type="tns:int"/>
-        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:AÑO" type="tns:int"/>
-        <parameter xmlns:pns="http://ws.edu.uniajc" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PERIODO" type="tns:int"/>
-      </operation>
-      <parameter name="allowedMethods" value="getHistoricoNotaJSON getHistoricoNotafull"/>
+      <parameter name="allowedMethods" value="getHistoricoNotaJSON"/>
 
-      <typeMapping xmlns:ns="http://model.edu.uniajc" qname="ns:HistoricoNota" type="java:uniajc.edu.model.HistoricoNota" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>

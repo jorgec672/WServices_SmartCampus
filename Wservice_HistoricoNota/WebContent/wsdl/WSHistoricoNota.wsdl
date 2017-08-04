@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://ws.edu.uniajc" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.edu.uniajc" xmlns:intf="http://ws.edu.uniajc" xmlns:tns1="http://model.edu.uniajc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://ws.edu.uniajc" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.edu.uniajc" xmlns:intf="http://ws.edu.uniajc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://ws.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://model.edu.uniajc"/>
    <element name="getHistoricoNotaJSON">
     <complexType>
      <sequence>
-      <element name="IDENTIFICACION" type="xsd:int"/>
-      <element name="AÑO" type="xsd:int"/>
-      <element name="PERIODO" type="xsd:int"/>
+      <element name="IDENTIFICACION" type="xsd:string"/>
+      <element name="AÑO" type="xsd:string"/>
+      <element name="PERIODO" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -21,61 +20,12 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="getHistoricoNotafull">
-    <complexType>
-     <sequence>
-      <element name="IDENTIFICACION" type="xsd:int"/>
-      <element name="AÑO" type="xsd:int"/>
-      <element name="PERIODO" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getHistoricoNotafullResponse">
-    <complexType>
-     <sequence>
-      <element name="getHistoricoNotafullReturn" type="tns1:HistoricoNota"/>
-     </sequence>
-    </complexType>
-   </element>
-  </schema>
-  <schema elementFormDefault="qualified" targetNamespace="http://model.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
-   <complexType name="HistoricoNota">
-    <sequence>
-     <element name="ESTP_CODIGOMATRICULA" nillable="true" type="xsd:string"/>
-     <element name="GRUP_NOMBRE" nillable="true" type="xsd:string"/>
-     <element name="MATE_CODIGOMATERIA" nillable="true" type="xsd:string"/>
-     <element name="MATE_NOMBRE" nillable="true" type="xsd:string"/>
-     <element name="NOMBRES" nillable="true" type="xsd:string"/>
-     <element name="PEGE_ID" nillable="true" type="xsd:string"/>
-     <element name="PEUN_ANO" nillable="true" type="xsd:string"/>
-     <element name="PEUN_PERIODO" nillable="true" type="xsd:string"/>
-     <element name="PROG_CODIGOPROGRAMA" nillable="true" type="xsd:string"/>
-     <element name="REAC_NOTAFINAL" nillable="true" type="xsd:string"/>
-     <element name="REAC_TIPO" nillable="true" type="xsd:string"/>
-    </sequence>
-   </complexType>
   </schema>
  </wsdl:types>
 
    <wsdl:message name="getHistoricoNotaJSONResponse">
 
       <wsdl:part element="impl:getHistoricoNotaJSONResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="getHistoricoNotafullRequest">
-
-      <wsdl:part element="impl:getHistoricoNotafull" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="getHistoricoNotafullResponse">
-
-      <wsdl:part element="impl:getHistoricoNotafullResponse" name="parameters">
 
       </wsdl:part>
 
@@ -103,18 +53,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getHistoricoNotafull">
-
-         <wsdl:input message="impl:getHistoricoNotafullRequest" name="getHistoricoNotafullRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getHistoricoNotafullResponse" name="getHistoricoNotafullResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
    </wsdl:portType>
 
    <wsdl:binding name="WSHistoricoNotaSoapBinding" type="impl:WSHistoricoNota">
@@ -132,24 +70,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getHistoricoNotaJSONResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getHistoricoNotafull">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getHistoricoNotafullRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getHistoricoNotafullResponse">
 
             <wsdlsoap:body use="literal"/>
 

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.edu.uniajc" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.edu.uniajc" xmlns:intf="http://ws.edu.uniajc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getHistoricoNotaJSON">
+    <complexType>
+     <sequence>
+      <element name="IDENTIFICACION" type="xsd:string"/>
+      <element name="AÑO" type="xsd:string"/>
+      <element name="PERIODO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getHistoricoNotaJSONResponse">
+    <complexType>
+     <sequence>
+      <element name="getHistoricoNotaJSONReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getHistoricoNotaJSONResponse">
+
+      <wsdl:part element="impl:getHistoricoNotaJSONResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getHistoricoNotaJSONRequest">
+
+      <wsdl:part element="impl:getHistoricoNotaJSON" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSHistoricoNota">
+
+      <wsdl:operation name="getHistoricoNotaJSON">
+
+         <wsdl:input message="impl:getHistoricoNotaJSONRequest" name="getHistoricoNotaJSONRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getHistoricoNotaJSONResponse" name="getHistoricoNotaJSONResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSHistoricoNotaSoapBinding" type="impl:WSHistoricoNota">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getHistoricoNotaJSON">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getHistoricoNotaJSONRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getHistoricoNotaJSONResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSHistoricoNotaService">
+
+      <wsdl:port binding="impl:WSHistoricoNotaSoapBinding" name="WSHistoricoNota">
+
+         <wsdlsoap:address location="http://localhost:8180/Wservice_HistoricoNota/services/WSHistoricoNota"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

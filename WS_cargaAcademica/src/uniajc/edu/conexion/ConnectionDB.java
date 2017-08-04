@@ -8,20 +8,48 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-
+/**
+ * 
+ * @author Team Nousagi
+ *
+ */
 public class ConnectionDB {
-	
+	/**
+	 * hostname IP Base datos 
+	 */
 	private String hostname;
+	/**
+	 * puerto Base datos
+	 */
 	private String port;
+	/**
+	 * Usuario Base datoss
+	 */
 	private String username;
+	/**
+	 * Contraseña Usuario Base datos
+	 */
 	private String password;
+	/**
+	 * SID Base datos
+	 */
 	private String sid;
-	
+	/**
+	 * Conexion Base datos
+	 */
 	private Connection connection;
+	/**
+	 * Propiedades proyecto
+	 */
 	private Properties prop = new Properties();
+	/**
+	 * Carga de propiedades del proyecto
+	 */
 	private InputStream input = ConnectionDB.class.getClassLoader().getResourceAsStream("parametros\\archivo.properties");
 
-
+/**
+ * Establece los atributos del objeto en los valores de la base de datos.
+ */
 	public ConnectionDB() {
 		try {
 			prop.load(input);
@@ -86,6 +114,10 @@ public class ConnectionDB {
 		this.sid = sid;
 	}
 
+	/**
+	 * Conexion a Base datos
+	 * @return is connect
+	 */
 	public boolean connect(){
 		
 		System.out.print("jdbc:oracle:thin:@"+this.hostname+":"+this.port+""+this.sid+"");
@@ -101,6 +133,13 @@ public class ConnectionDB {
 		return this.isConnected();
 	}
 	
+	
+	/**
+	 * 
+	 * @param query
+	 * @return {ResultSet} resultado del query.
+	 * @throws SQLException
+	 */
 	public ResultSet query(String query) throws SQLException
 	{
 		if(!this.isConnected())
@@ -109,6 +148,10 @@ public class ConnectionDB {
 		return sm.executeQuery(query);
 	}
 	
+	/**
+	 * 
+	 * @return {boolean} valida si la conexion esta abierta
+	 */
 	public boolean isConnected()
 	{
 		try {
@@ -118,6 +161,9 @@ public class ConnectionDB {
 		}
 	}
 	
+	/**
+	 * Cierra conexion Bd
+	 */
 	public void disconnect()
 	{
 		try {

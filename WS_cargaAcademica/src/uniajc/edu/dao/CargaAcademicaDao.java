@@ -4,17 +4,24 @@ import uniajc.edu.model.*;
 import uniajc.edu.conexion.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.util.ArrayList;
 import java.util.ArrayList;
 
-//import com.google.gson.Gson;
-
+/**
+ * 
+ * @author Team Nousagi
+ *
+ */
 public class CargaAcademicaDao {
-	
+	/**
+	 * 
+	 * @param P_ID - idenficacion de Docente
+	 * @param ANO - Entero que represanta el Año a consultar Carga academica Ej:2017
+	 * @param PERIODO  -Entero que representa el Periodo a consulta Ejemplo01,02 
+	 * @return {ArrayList} Tipo JSON con la Carga academica consultada del profesor
+	 * 
+	 */
 	public ArrayList<CargaAcademica> getCargaAcademicafull(String P_ID,String ANO,String PERIODO) {
 		
-		
-		CargaAcademica cargafull = new CargaAcademica();
 		ConnectionDB conn = new ConnectionDB();
 		ArrayList<CargaAcademica>  Datos= new ArrayList();
 		

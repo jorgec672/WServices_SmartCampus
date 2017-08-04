@@ -1,41 +1,15 @@
 package uniajc.edu.model;
-
+/**
+ * 
+ * @author Team Nousagi
+ *
+ */
 public class CargaAcademica {
-
+/**
+ * Varibles Privadas
+ */
 	private String PEGE_ID;
 	private String PEGE_DOCUMENTOIDENTIDAD;
-	public String getNOMBRES() {
-		return NOMBRES;
-	}
-
-
-
-
-
-
-	public void setNOMBRES(String nOMBRES) {
-		NOMBRES = nOMBRES;
-	}
-
-
-
-
-
-
-	public String getPERIODO() {
-		return PERIODO;
-	}
-
-
-
-
-
-
-	public void setPERIODO(String pERIODO) {
-		PERIODO = pERIODO;
-	}
-
-
 	private String NOMBRES;
 	private String MATE_CODIGOMATERIA;
 	private String MATE_NOMBRE;
@@ -45,16 +19,27 @@ public class CargaAcademica {
 	private String UNIDAD_ACADEMICA;
 	private String PERIODO;
 	
-	
+	/**
+	 * Constructor no Parametrizado
+	 */
 	public CargaAcademica() {
 	
 	}
 		
-
 	
 
-
-
+/**
+ * Contructor Parametrizado
+ * @param pEGE_ID : identificacion unica en Academusoft
+ * @param pEGE_DOCUMENTOIDENTIDAD : Cedula del usuario 
+ * @param nOMBRES : Nombre comcatenado (Primer nombre , segundo nombre , primer apellido , segundo apellido)
+ * @param uNIDAD_ACADEMICA  : Facultad  ejempli : ingenieria ,ciencias empresariales
+ * @param mATE_CODIGOMATERIA : Codigo de la asignatura
+ * @param mATE_NOMBRE : nombre de la asignatura
+ * @param gRUP_NOMBRE : Nombre del grupo
+ * @param gRUP_CUPOS : Cantidad de matriculados
+ * @param pERIODO : numerico idenficador de periodo
+ */
 	public CargaAcademica(String pEGE_ID, String pEGE_DOCUMENTOIDENTIDAD, String nOMBRES,String uNIDAD_ACADEMICA, String mATE_CODIGOMATERIA,
 			String mATE_NOMBRE, String gRUP_NOMBRE, String gRUP_CUPOS, 
 			 String pERIODO) {
@@ -70,7 +55,23 @@ public class CargaAcademica {
 		UNIDAD_ACADEMICA = uNIDAD_ACADEMICA;
 	}
 
+	public String getNOMBRES() {
+		return NOMBRES;
+	}
 
+	public void setNOMBRES(String nOMBRES) {
+		NOMBRES = nOMBRES;
+	}
+
+
+	public String getPERIODO() {
+		return PERIODO;
+	}
+
+
+	public void setPERIODO(String pERIODO) {
+		PERIODO = pERIODO;
+	}
 
 
 
@@ -80,17 +81,9 @@ public class CargaAcademica {
 	}
 
 
-
-
-
-
 	public void setUNIDAD_ACADEMICA(String uNIDAD_ACADEMICA) {
 		UNIDAD_ACADEMICA = uNIDAD_ACADEMICA;
 	}
-
-
-
-
 
 
 	public String getPEGE_ID() {
@@ -172,8 +165,6 @@ public class CargaAcademica {
 	}
 
 
-
-
 	public String getPEUN_PERIODO() {
 		return PERIODO;
 	}
@@ -183,6 +174,5 @@ public class CargaAcademica {
 		PERIODO = pEUN_PERIODO;
 	} 
 	
-
 
 }

@@ -6,7 +6,11 @@ import uniajc.edu.dao.CargaAcademicaDao;
 import uniajc.edu.model.CargaAcademica;
 import uniajc.edu.servicio.ICargaAcademica;
 
-
+/**
+ * 
+ * @author Team Nousagi
+ *
+ */
 public class SCargaAcademicaImp implements ICargaAcademica {
 
    @Override

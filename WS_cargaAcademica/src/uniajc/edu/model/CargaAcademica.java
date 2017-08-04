@@ -42,7 +42,7 @@ public class CargaAcademica {
 	private String GRUP_NOMBRE;
 	private String GRUP_CUPOS;
 	private String DOGR_FECHACAMBIO;
-	private String DOGR_REGISTRADOPOR;
+	private String UNIDAD_ACADEMICA;
 	private String PERIODO;
 	
 	
@@ -55,9 +55,9 @@ public class CargaAcademica {
 
 
 
-	public CargaAcademica(String pEGE_ID, String pEGE_DOCUMENTOIDENTIDAD, String nOMBRES, String mATE_CODIGOMATERIA,
-			String mATE_NOMBRE, String gRUP_NOMBRE, String gRUP_CUPOS, String dOGR_FECHACAMBIO,
-			String dOGR_REGISTRADOPOR, String pERIODO) {
+	public CargaAcademica(String pEGE_ID, String pEGE_DOCUMENTOIDENTIDAD, String nOMBRES,String uNIDAD_ACADEMICA, String mATE_CODIGOMATERIA,
+			String mATE_NOMBRE, String gRUP_NOMBRE, String gRUP_CUPOS, 
+			 String pERIODO) {
 		
 		PEGE_ID = pEGE_ID;
 		PEGE_DOCUMENTOIDENTIDAD = pEGE_DOCUMENTOIDENTIDAD;
@@ -66,9 +66,26 @@ public class CargaAcademica {
 		MATE_NOMBRE = mATE_NOMBRE;
 		GRUP_NOMBRE = gRUP_NOMBRE;
 		GRUP_CUPOS = gRUP_CUPOS;
-		DOGR_FECHACAMBIO = dOGR_FECHACAMBIO;
-		DOGR_REGISTRADOPOR = dOGR_REGISTRADOPOR;
 		PERIODO = pERIODO;
+		UNIDAD_ACADEMICA = uNIDAD_ACADEMICA;
+	}
+
+
+
+
+
+
+	public String getUNIDAD_ACADEMICA() {
+		return UNIDAD_ACADEMICA;
+	}
+
+
+
+
+
+
+	public void setUNIDAD_ACADEMICA(String uNIDAD_ACADEMICA) {
+		UNIDAD_ACADEMICA = uNIDAD_ACADEMICA;
 	}
 
 
@@ -155,14 +172,6 @@ public class CargaAcademica {
 	}
 
 
-	public String getDOGR_REGISTRADOPOR() {
-		return DOGR_REGISTRADOPOR;
-	}
-
-
-	public void setDOGR_REGISTRADOPOR(String dOGR_REGISTRADOPOR) {
-		DOGR_REGISTRADOPOR = dOGR_REGISTRADOPOR;
-	}
 
 
 	public String getPEUN_PERIODO() {

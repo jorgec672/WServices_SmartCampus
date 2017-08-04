@@ -19,7 +19,7 @@ public class ConnectionDB {
 	
 	private Connection connection;
 	private Properties prop = new Properties();
-	private InputStream input = ConnectionDB.class.getClassLoader().getResourceAsStream("archivo.properties");
+	private InputStream input = ConnectionDB.class.getClassLoader().getResourceAsStream("parametros\\archivo.properties");
 
 
 	public ConnectionDB() {

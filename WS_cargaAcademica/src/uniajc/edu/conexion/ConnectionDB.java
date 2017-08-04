@@ -136,9 +136,9 @@ public class ConnectionDB {
 	
 	/**
 	 * 
-	 * @param query
+	 * @param query Consulta SQL
 	 * @return {ResultSet} resultado del query.
-	 * @throws SQLException
+	 * @throws SQLException Captura de Exception 
 	 */
 	public ResultSet query(String query) throws SQLException
 	{

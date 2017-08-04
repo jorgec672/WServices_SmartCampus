@@ -14,7 +14,7 @@ public class CreaJson {
 	
 	/**
 	 * 
-	 * @return
+	 * @return Objeto tipo Json
 	 */
 	public static CreaJson getJson(){
 		return  JSON;

@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -33,21 +33,17 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="WSMatriculaAcademica" provider="java:RPC" style="wrapped" use="literal">
-  <ns3:operation name="getMatriculaAcademicafull" qname="ns1:getMatriculaAcademicafull" returnQName="ns1:getMatriculaAcademicafullReturn" returnType="ns2:MatriculaAcademica" soapAction="" xmlns:ns1="http://ws.edu.uniajc" xmlns:ns2="http://model.edu.uniajc" xmlns:ns3="http://xml.apache.org/axis/wsdd/">
-   <ns3:parameter qname="ns1:IDENTIFICACION" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns3:operation>
-  <ns1:operation name="getMatriculaAcademicaJSON" qname="ns3:getMatriculaAcademicaJSON" returnQName="ns3:getMatriculaAcademicaJSONReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://ws.edu.uniajc" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns3:IDENTIFICACION" type="xsd:int"/>
-  </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="getMatriculaAcademicaJSON getMatriculaAcademicafull"/>
+  <ns2:operation name="getMatriculaAcademicaJSON" qname="ns1:getMatriculaAcademicaJSON" returnQName="ns1:getMatriculaAcademicaJSONReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://ws.edu.uniajc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:IDENTIFICACION" type="xsd:int"/>
+  </ns2:operation>
+  <ns1:parameter name="allowedMethods" value="getMatriculaAcademicaJSON"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="WSMatriculaAcademica"/>
   <ns1:parameter name="className" value="uniajc.edu.ws.WSMatriculaAcademica"/>
   <ns1:parameter name="wsdlServicePort" value="WSMatriculaAcademica"/>
-  <ns1:parameter name="schemaQualified" value="http://model.edu.uniajc,http://ws.edu.uniajc"/>
+  <ns1:parameter name="schemaQualified" value="http://ws.edu.uniajc"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://ws.edu.uniajc"/>
   <ns1:parameter name="wsdlServiceElement" value="WSMatriculaAcademicaService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns4:MatriculaAcademica" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:uniajc.edu.model.MatriculaAcademica" xmlns:ns4="http://model.edu.uniajc"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>

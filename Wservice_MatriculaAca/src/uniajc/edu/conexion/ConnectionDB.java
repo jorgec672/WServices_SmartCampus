@@ -1,10 +1,13 @@
 package uniajc.edu.conexion;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class ConnectionDB {
 	
@@ -15,24 +18,26 @@ public class ConnectionDB {
 	private String sid;
 	
 	private Connection connection;
+	private Properties prop = new Properties();
+	private InputStream input = ConnectionDB.class.getClassLoader().getResourceAsStream("archivo.properties");
 
-	public ConnectionDB(String hostname, String port, String username, String password, Connection connection, String sid) {
-		super();
-		this.hostname = hostname;
-		this.port = port;
-		this.username = username;
-		this.password = password;
-		this.connection = connection;
-		this.sid = sid;
-	}
-
+	
 	public ConnectionDB() {
-		this.hostname = "10.75.19.4";
-		this.port = "1521";
-		this.username = "ACADEMICO";
-		this.password = "acad23+yxw#";
-		this.sid = "/UNIAJC";
+		
+		try {
+			prop.load(input); 
+			this.hostname = prop.getProperty("ipBD_OR");
+			this.port = prop.getProperty("puertoBD_OR");
+			this.username = prop.getProperty("usuarioBD_OR");
+			this.password = prop.getProperty("claveBD_OR");
+			this.sid = prop.getProperty("Sid_ORD");
+			
+			
+		} catch (IOException e) {
+			System.out.print("Error");
+		}
 	}
+	
 
 	public String getHostname() {
 		return hostname;
@@ -84,6 +89,7 @@ public class ConnectionDB {
 
 	public boolean connect(){
 		
+		
 		String url = "jdbc:oracle:thin:@"+this.hostname+":"+this.port+""+this.sid+"";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -91,6 +97,7 @@ public class ConnectionDB {
 			System.out.print("Conectado");
 		} catch(SQLException | ClassNotFoundException ex) {ex.printStackTrace();
 			this.connection = null;
+			
 		}
 		return this.isConnected();
 	}

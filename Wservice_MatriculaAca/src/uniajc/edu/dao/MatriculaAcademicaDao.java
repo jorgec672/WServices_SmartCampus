@@ -5,14 +5,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import uniajc.edu.conexion.ConnectionDB;
-import uniajc.edu.model.*;
-public class MatriculaAcademicaDao {
+import uniajc.edu.model.MatriculaAcademica;
 
-	public MatriculaAcademica getMatriculaAcademica(int P_ID)
+
+
+
+public class MatriculaAcademicaDao  {
+
+	public ArrayList<MatriculaAcademica> getMatriculaAcademica(int P_ID)
 	{
 		MatriculaAcademica carga = new MatriculaAcademica();
-		ConnectionDB conn = new ConnectionDB();
+	ConnectionDB conn = new ConnectionDB();
 		ArrayList<MatriculaAcademica>  Datos= new ArrayList();
+		
 		
 		 try {
 			 conn.connect();
@@ -65,20 +70,14 @@ public class MatriculaAcademicaDao {
 			 	    + "PROGRAMA, SEMESTRE, NOMBRE";
 			 
 			 ResultSet rs = conn.query(v_sqlPrograms);	
-			 System.out.println(v_sqlPrograms);
+			
 		while (rs.next()){
 			
-			carga.setDOCUMENTO("DOCUMENTO");
-			carga.setCOD_MATERIA("COD_MATERIA");
-			carga.setCOD_PROG("COD_PROG");
-			carga.setMATERIA("METERIA");
-			carga.setGRUPO("GRUPO");
-	   
-			Datos.add(carga);
+			Datos.add(new MatriculaAcademica (rs.getString("DOCUMENTO"),rs.getString("NOMBRE"),rs.getString("COD_PROG"),rs.getString("PROGRAMA"), rs.getString("SEMESTRE"),rs.getString("COD_MATERIA"), rs.getString("MATERIA"),rs.getString("CRED"), rs.getString("GRUPO"), rs.getString("PER_MATRIC"),rs.getString("ESTADO_MAAC"), rs.getString("DOCENTE")));
+			
 		}
-		 
-		System.out.println(Datos.toString());
-			return carga;
+		
+			return Datos;
 			
 		
 		 } catch (SQLException e) {

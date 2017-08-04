@@ -8,10 +8,14 @@ import uniajc.edu.model.MatriculaAcademica;
 public class SMatriculaAcademicaImp implements IMatriculaAcademica {
 
 	@Override
-	 public MatriculaAcademica getMatriculaAcademica (int id) {
-	  MatriculaAcademicaDao MatriculaAcademicaDao = new MatriculaAcademicaDao();
-	  return MatriculaAcademicaDao.getMatriculaAcademica(id);
+	public ArrayList<MatriculaAcademica> getMatriculaAcademica(int id) {
+		MatriculaAcademicaDao MatriculaAcademicaDao = new MatriculaAcademicaDao();
+		  return MatriculaAcademicaDao.getMatriculaAcademica(id);
+	}
+
+	
+	  
 	
 }
 	
-}
+	

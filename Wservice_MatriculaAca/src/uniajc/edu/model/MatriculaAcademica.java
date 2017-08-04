@@ -7,7 +7,7 @@
 
 package uniajc.edu.model;
 
-public class MatriculaAcademica   {
+public class MatriculaAcademica  {
     private String DOCUMENTO;
     private String NOMBRE;
     private String COD_PROG;
@@ -24,7 +24,7 @@ public class MatriculaAcademica   {
 
    
 
-    public MatriculaAcademica() {
+    public MatriculaAcademica(){
     }
 
 

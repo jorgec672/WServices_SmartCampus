@@ -15,26 +15,15 @@
   <service name="WSMatriculaAcademica" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://ws.edu.uniajc"/>
       <parameter name="wsdlServiceElement" value="WSMatriculaAcademicaService"/>
-      <parameter name="schemaQualified" value="http://model.edu.uniajc,http://ws.edu.uniajc"/>
+      <parameter name="schemaQualified" value="http://ws.edu.uniajc"/>
       <parameter name="wsdlServicePort" value="WSMatriculaAcademica"/>
       <parameter name="className" value="uniajc.edu.ws.WSMatriculaAcademicaSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="WSMatriculaAcademica"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="getMatriculaAcademicafull" qname="operNS:getMatriculaAcademicafull" xmlns:operNS="http://ws.edu.uniajc" returnQName="retNS:getMatriculaAcademicafullReturn" xmlns:retNS="http://ws.edu.uniajc" returnType="rtns:MatriculaAcademica" xmlns:rtns="http://model.edu.uniajc" soapAction="" >
-        <parameter qname="pns:IDENTIFICACION" xmlns:pns="http://ws.edu.uniajc" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
       <operation name="getMatriculaAcademicaJSON" qname="operNS:getMatriculaAcademicaJSON" xmlns:operNS="http://ws.edu.uniajc" returnQName="retNS:getMatriculaAcademicaJSONReturn" xmlns:retNS="http://ws.edu.uniajc" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:IDENTIFICACION" xmlns:pns="http://ws.edu.uniajc" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="getMatriculaAcademicaJSON getMatriculaAcademicafull"/>
+      <parameter name="allowedMethods" value="getMatriculaAcademicaJSON"/>
 
-      <typeMapping
-        xmlns:ns="http://model.edu.uniajc"
-        qname="ns:MatriculaAcademica"
-        type="java:uniajc.edu.model.MatriculaAcademica"
-        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
-        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
-        encodingStyle=""
-      />
   </service>
 </deployment>

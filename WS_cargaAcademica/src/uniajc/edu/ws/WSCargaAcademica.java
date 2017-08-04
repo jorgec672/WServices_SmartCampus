@@ -6,7 +6,7 @@ import uniajc.edu.servicio.SCargaAcademicaImp;
 import uniajc.edu.utilidades.CreaJson;
 
 /**
- * 
+ * Clara principal WsCarga Academica
  * @author Nousagi
  *
  */

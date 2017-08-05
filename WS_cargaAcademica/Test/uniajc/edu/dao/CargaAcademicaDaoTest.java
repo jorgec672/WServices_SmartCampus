@@ -2,6 +2,8 @@ package uniajc.edu.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 import uniajc.edu.conexion.*;
@@ -22,11 +24,12 @@ public class CargaAcademicaDaoTest {
 	@Test
 	public void testCargaAcademicaDao() {
 		if(conn.connect()) {
-			CargaAcademica ca = new CargaAcademica("12345","16917124","carlos","1111","MATEMATICAS","201",
-					"10","100","100"); //Ingresar Datos de Reales que puedan resultar de la consulta		
-			assertEquals(json.respondeOBJSON(ca), json.respondeOBJSON(cargaDao.getCargaAcademicafull("16917124","2016","01")));//Ingresar los datos de busquedapara la BD
+			CargaAcademica test = new CargaAcademica("17272","16917124","BOLAÑOS CEBALLOS CARLOS ANDRES","FI200025","ELEC REDES II (SEGURIDAD EN REDES)","711",
+					"14","FACULTAD DE INGENIERÍAS","2017-01"); //Ingresar Datos de Reales que puedan resultar de la consulta
+			ArrayList<CargaAcademica> real= cargaDao.getCargaAcademicafull("16917124","2017","01");
+			assertEquals(json.respondeOBJSON(test), json.respondeOBJSON(real));//Ingresar los datos de busquedapara la BD
 		} else {
-			fail("Database Connection failure");
+			fail("Error en la conexion de la base de datos");
 		}
 	}
 

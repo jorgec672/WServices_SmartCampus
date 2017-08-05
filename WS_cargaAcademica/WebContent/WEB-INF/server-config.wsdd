@@ -33,12 +33,12 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="WSCargaAcademica" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="getCargaAcademicaJSON" qname="ns1:getCargaAcademicaJSON" returnQName="ns1:getCargaAcademicaJSONReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://ws.edu.uniajc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+  <ns2:operation name="getCargaAcademicaJSON1" qname="ns1:getCargaAcademicaJSON1" returnQName="ns1:getCargaAcademicaJSON1Return" returnType="xsd:string" soapAction="" xmlns:ns1="http://ws.edu.uniajc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
    <ns2:parameter qname="ns1:IDENTIFICACION" type="xsd:string"/>
-   <ns2:parameter qname="ns1:A&#xD1;O" type="xsd:string"/>
+   <ns2:parameter qname="ns1:ANO" type="xsd:string"/>
    <ns2:parameter qname="ns1:PERIODO" type="xsd:string"/>
   </ns2:operation>
-  <ns1:parameter name="allowedMethods" value="getCargaAcademicaJSON"/>
+  <ns1:parameter name="allowedMethods" value="getCargaAcademicaJSON1"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="WSCargaAcademica"/>
   <ns1:parameter name="className" value="uniajc.edu.ws.WSCargaAcademica"/>

@@ -4,36 +4,36 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://ws.edu.uniajc" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="getCargaAcademicaJSON">
+   <element name="getCargaAcademicaJSON1">
     <complexType>
      <sequence>
       <element name="IDENTIFICACION" type="xsd:string"/>
-      <element name="AÑO" type="xsd:string"/>
+      <element name="ANO" type="xsd:string"/>
       <element name="PERIODO" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="getCargaAcademicaJSONResponse">
+   <element name="getCargaAcademicaJSON1Response">
     <complexType>
      <sequence>
-      <element name="getCargaAcademicaJSONReturn" type="xsd:string"/>
+      <element name="getCargaAcademicaJSON1Return" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getCargaAcademicaJSONRequest">
+   <wsdl:message name="getCargaAcademicaJSON1Response">
 
-      <wsdl:part element="impl:getCargaAcademicaJSON" name="parameters">
+      <wsdl:part element="impl:getCargaAcademicaJSON1Response" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getCargaAcademicaJSONResponse">
+   <wsdl:message name="getCargaAcademicaJSON1Request">
 
-      <wsdl:part element="impl:getCargaAcademicaJSONResponse" name="parameters">
+      <wsdl:part element="impl:getCargaAcademicaJSON1" name="parameters">
 
       </wsdl:part>
 
@@ -41,13 +41,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="WSCargaAcademica">
 
-      <wsdl:operation name="getCargaAcademicaJSON">
+      <wsdl:operation name="getCargaAcademicaJSON1">
 
-         <wsdl:input message="impl:getCargaAcademicaJSONRequest" name="getCargaAcademicaJSONRequest">
+         <wsdl:input message="impl:getCargaAcademicaJSON1Request" name="getCargaAcademicaJSON1Request">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getCargaAcademicaJSONResponse" name="getCargaAcademicaJSONResponse">
+         <wsdl:output message="impl:getCargaAcademicaJSON1Response" name="getCargaAcademicaJSON1Response">
 
        </wsdl:output>
 
@@ -59,17 +59,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="getCargaAcademicaJSON">
+      <wsdl:operation name="getCargaAcademicaJSON1">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getCargaAcademicaJSONRequest">
+         <wsdl:input name="getCargaAcademicaJSON1Request">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getCargaAcademicaJSONResponse">
+         <wsdl:output name="getCargaAcademicaJSON1Response">
 
             <wsdlsoap:body use="literal"/>
 
@@ -83,7 +83,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:WSCargaAcademicaSoapBinding" name="WSCargaAcademica">
 
-         <wsdlsoap:address location="http://localhost:8180/WS_cargaAcademica/services/WSCargaAcademica"/>
+         <wsdlsoap:address location="http://localhost:8380/WS_cargaAcademica/services/WSCargaAcademica"/>
 
       </wsdl:port>
 

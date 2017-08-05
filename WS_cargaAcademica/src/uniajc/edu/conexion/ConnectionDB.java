@@ -45,7 +45,7 @@ public class ConnectionDB {
 	/**
 	 * Carga de propiedades del proyecto
 	 */
-	private InputStream input = ConnectionDB.class.getClassLoader().getResourceAsStream("parametros\\archivo.properties");
+	private InputStream input = ConnectionDB.class.getClassLoader().getResourceAsStream("archivo.properties");
 
 /**
  * Establece los atributos del objeto en los valores de la base de datos.
